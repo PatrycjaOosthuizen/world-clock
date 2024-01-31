@@ -1,6 +1,224 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    110.6deg,
+    rgb(156, 116, 129) -18.3%,
+    rgb(67, 54, 74) 16.4%,
+    rgb(47, 48, 67) 68.2%,
+    rgb(27, 23, 36) 99.1%
+  );
+  color: #d1dae3;
+  font-family: sans-serif;
+}
+
+body.light {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(248, 219, 219) 0%,
+    rgb(229, 248, 250) 90%
+  );
+  color: #272044;
+}
+.container {
+  margin: 60px auto;
+  padding: 40px;
+  box-shadow: 0em -1.2em 1.2em rgba(255, 255, 255, 0.08),
+    inset 0em -1.2em 1.2em rgba(255, 255, 255, 0.08),
+    0em 1.2em 1.2em rgba(0, 0, 0, 0.7), inset 0em 1.2em 1.2em rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
+select {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background: #d1dae3;
+  font-size: 15px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+}
 h1 {
   text-align: center;
+  font-size: 40px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+h2 {
+  margin: 0 auto;
+  font-size: 30px;
+  font-weight: 950;
+}
+
+.city {
+  margin: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed grey;
+}
+
+.time {
+  padding-top: 15px;
+  font-size: 30px;
+}
+
+.date {
+  opacity: 0.7;
+  padding-bottom: 8px;
+}
+.analog-clock {
+  display: flex;
+  justify-content: center;
+}
+.clock {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/112/914/original/cogsworth.jpg?1706598788);
+  background-size: cover;
+  box-shadow: 0em -1.2em 1.2em rgba(255, 255, 255, 0.06),
+    inset 0em -1.2em 1.2em rgba(255, 255, 255, 1),
+    0em 1.2em 1.2em rgba(0, 0, 0, 0.7), inset 0em 1.2em 1.2em rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+.current-city {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 30px;
+}
+.current-city-name {
+  font-size: 30px;
+  color: #895df1;
+  font-weight: 800;
+}
+.current-city-date {
+  opacity: 0.7;
+  font-size: 18px;
+}
+
+body.light .clock {
+  box-shadow: 0em -1.2em 1.2em rgba(255, 255, 255, 1),
+    inset 1em 1em -1em rgba(255, 255, 255, 1),
+    0em -1.2em -1.2em rgba(0, 0, 0, 0.1), inset 1em -1em 1em rgba(0, 0, 0, 0.1);
+}
+
+.clock:before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+  position: absolute;
+}
+
+.clock .hour,
+.hr {
+  width: 160px;
+  height: 160px;
+}
+
+.clock .min,
+.mn {
+  width: 190px;
+  height: 190px;
+}
+
+.clock .sec,
+.sc {
+  width: 230px;
+  height: 230px;
+}
+
+.hr,
+.mn,
+.sc {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hr:before {
+  content: "";
+  position: absolute;
+  width: 7.5px;
+  height: 80px;
+  background: #f81460;
+  z-index: 10;
+  border-radius: 2.8px;
+}
+
+.mn:before {
+  content: "";
+  position: absolute;
+  width: 3.5px;
+  height: 100px;
+  background: #ffffff;
+  z-index: 11;
+  border-radius: 3px;
+}
+
+.sc:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: #895df1;
+  z-index: 12;
+  border-radius: 3px;
+}
+
+.toggleClass {
+  position: absolute;
+  top: 35px;
+  right: 310px;
+  width: 20px;
+  margin: 2px;
+  height: 20px;
+  font-size: 18px;
+  border-radius: 50%;
+  background: #d1dae3;
+  font-family: sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.toggleClass:before {
+  position: absolute;
+  content: "Light Mode";
+  white-space: nowrap;
+  left: 25px;
+}
+
+body.light .toggleClass {
+  background: #272044;
+  color: #272044;
+  content: "Dark Mode";
+}
+
+body.light .toggleClass:before {
+  content: "Dark Mode";
+  white-space: nowrap;
+}
+a {
+  color: #895df1;
 }
 footer {
-  text-align: center;
+  padding: 20px 0 0 0;
+  margin: 20px;
+  font-size: 14px;
+  font-weight: 100;
 }
