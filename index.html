@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
     <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.44/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>World Clock - Patrycja Oosthuizen</title>
   </head>
   <body>
@@ -54,6 +56,7 @@
         <option value="America/New_York">New_York</option>
         <option value="Europe/Oslo">Oslo</option>
         <option value="America/Puerto_Rico">Puerto Rico</option>
+        <option value="Europe/Paris">Paris</option>
         <option value="Europe/Rome">Rome</option>
         <option value="Asia/Singapore">Singapore</option>
         <option value="Australia/Sydney">Sydney</option>
@@ -82,42 +85,42 @@
         </div>
       </div>
       <div class="toggleClass" onclick="toggleClass()"></div>
-      <div class="current-city">
-        <div class="current-city-time">05:30:05 <small>AM</small></div>
+      <div class="local-city" id="local-city">
+        <div class="local-city-time">05:30:05 <small>AM</small></div>
         <div>
-          <div class="current-city-name">London</div>
+          <div class="local-city-name">London</div>
         </div>
         <div>
-          <div class="current-city-date">February 1st 2024</div>
+          <div class="local-city-date">February 1st 2024</div>
         </div>
       </div>
-      <div class="city">
+      <div class="city" id="new-york">
         <div>
           <h2>New York 🇺🇸</h2>
-          <div class="date">February 1st 2024</div>
+          <div class="date"></div>
         </div>
-        <div class="time">05:30:05 <small>AM</small></div>
+        <div class="time"></div>
       </div>
-      <div class="city">
+      <div class="city" id="london">
         <div>
           <h2>London 🇬🇧</h2>
-          <div class="date">February 1st 2024</div>
+          <div class="date"></div>
         </div>
-        <div class="time">05:30:05 <small>AM</small></div>
+        <div class="time"></div>
       </div>
-      <div class="city">
+      <div class="city" id="zurich">
         <div>
           <h2>Zurich 🇨🇭</h2>
-          <div class="date">February 1st 2024</div>
+          <div class="date"></div>
         </div>
-        <div class="time">05:30:05 <small>AM</small></div>
+        <div class="time"></div>
       </div>
-      <div class="city">
+      <div class="city" id="tokyo">
         <div>
           <h2>Tokyo 🇯🇵</h2>
-          <div class="date">February 1st 2024</div>
+          <div class="date"></div>
         </div>
-        <div class="time">05:30:05 <small>AM</small></div>
+        <div class="time"></div>
       </div>
       <footer>
         Project coded by Patrycja Oosthuizen and is

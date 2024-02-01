@@ -65,6 +65,7 @@ h2 {
 .date {
   opacity: 0.7;
   padding-bottom: 8px;
+  font-size: 12px;
 }
 .analog-clock {
   display: flex;
@@ -83,7 +84,7 @@ h2 {
     0em 1.2em 1.2em rgba(0, 0, 0, 0.7), inset 0em 1.2em 1.2em rgba(0, 0, 0, 0.5);
   border-radius: 50%;
 }
-.current-city {
+.local-city {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,12 +95,12 @@ h2 {
   height: 90px;
   padding-top: 8px;
 }
-.current-city-name {
+.local-city-name {
   font-size: 30px;
   color: #895df1;
   font-weight: 800;
 }
-.current-city-date {
+.local-city-date {
   opacity: 0.7;
   font-size: 12px;
 }
