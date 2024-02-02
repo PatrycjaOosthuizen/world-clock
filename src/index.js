@@ -4,6 +4,7 @@ function toggleClass() {
   body.classList.toggle("light");
   body.style.transition = `0.3s linear`;
 }
+
 const deg = 6;
 // 360 / (12 * 5);
 
@@ -22,6 +23,7 @@ setInterval(() => {
   mn.style.transform = `rotateZ(${mm}deg)`;
   sc.style.transform = `rotateZ(${ss}deg)`;
 });
+
 // Ananlog clock end //
 
 function updateTime() {
@@ -72,21 +74,51 @@ function updateTime() {
     );
   }
 }
+
+function localTime() {
+  let localCity = document.querySelector("#local-city");
+  let localTZ = moment.tz.guess();
+  let localCityTime = moment().tz(localTZ);
+  localCity = localTZ.replace("_", " ").split("/")[1];
+
+  let localCityElement = document.querySelector("#local-city");
+  if (localCityElement) {
+    localCityElement.innerHTML = ` <div class="local-city-swap">
+        <div class="local-city-time">${localCityTime.format(
+          "h:mm:ss"
+        )} <small>${localCityTime.format("A")}</small></div>
+        <div>
+          <div class="local-city-name">${localCity}</div>
+        </div>
+        <div>
+          <div class="local-city-date">${localCityTime.format(
+            "MMMM Do YYYY"
+          )}</div>
+        </div>`;
+  }
+}
+
+let localTimeInterval = setInterval(localTime, 100);
+
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
   citiesElement.innerHTML = `
-  <div class="city">
+ <div class="city">
           <div>
             <h2>${cityName}</h2>
-            <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+            <div class="date">${cityTime.format("MMM Do YYYY")}</div>
           </div>
-          <div class="time">${cityTime.format(
-            "h:mm:ss"
-          )} <small>${cityTime.format("A")}</small></div>
-        </div>`;
+          <div class="time">${cityTime.format("h:mm")} <small>${cityTime.format(
+    "A"
+  )}</small></div>
+        </div>
+  </div> <div class="home-page"><a href="/"> Back to homepage</a></div>`;
 }
 
 updateTime();
