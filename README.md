@@ -11,3 +11,4 @@ A project from [SheCodes](https://www.shecodes.io/workshops?gc_id=20485440392&h_
   * The ability to see the date and time of the user's current location
 
 View the project live [here](https://world-clock-patrycja-oosthuizen.netlify.app/) 👀
+![world clock app](https://github.com/PatrycjaOosthuizen/world-clock/assets/152764771/c79242da-52d9-49f8-b606-85a229bbf117)
